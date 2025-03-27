@@ -19,7 +19,8 @@ public class SecurityConfig {
                         .anyExchange().permitAll()
                 )
                 .httpBasic(Customizer.withDefaults())
-                .formLogin().disable();
+                .formLogin().disable()
+                .csrf(ServerHttpSecurity.CsrfSpec::disable);
 
         return http.build();
     }
